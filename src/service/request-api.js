@@ -39,9 +39,9 @@ service.interceptors.response.use(
         process.env.NODE_ENV !== "development"
           ? "http://admin.axisnow.xyz"
           : "http://localhost:4670";
-      if (defaultSettings.expireUrl)
+      if (defaultSettings.signIn)
         window.open(
-          defaultSettings.expireUrl + "?redirect_url=" + redirect_url,
+          defaultSettings.signIn + "?redirect_url=" + redirect_url,
           "_self"
         );
     }

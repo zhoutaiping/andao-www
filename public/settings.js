@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'ANDAO',
+  title: "ANDAO",
 
   /**
    * @type {boolean} true | false
@@ -31,8 +31,8 @@ module.exports = {
    * The default is only used in the production env
    * If you want to also use it in dev, you can pass ['production', 'development']
    */
-  errorLog: 'production',
+  errorLog: "production",
 
-  expireUrl: 'https://account.axisnow.xyz/user/sign-in',
-  signOutUrl: 'https://account.axisnow.xyz/user/sign-out'
-}
+  signIn: "https://account.axisnow.xyz/user/sign-in",
+  signOutUrl: "https://account.axisnow.xyz/user/sign-out",
+};

@@ -57,10 +57,10 @@ export default {
   },
   methods: {
     handleLogin(TYPE) {
-      if (defaultSettings.expireUrl) {
+      if (defaultSettings.signIn) {
         removeToken();
         localStorage.clear();
-        window.location.replace(defaultSettings.expireUrl, '_self');
+        window.location.replace(defaultSettings.signIn, '_self');
       }
     },
     async logout() {
