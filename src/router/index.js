@@ -66,24 +66,12 @@ export const constantRoutes = [
     component: () => import("@/views/error-page/404"),
     hidden: true,
   },
-  {
-    path: "/401",
-    component: () => import("@/views/error-page/401"),
-    hidden: true,
-  },
+
   {
     path: "/",
     component: Layout,
     redirect: "/news",
     hidden: true,
-    children: [
-      {
-        path: "dashboard",
-        component: () => import("@/views/dashboard/index"),
-        name: "Dashboard",
-        meta: { title: "首页", icon: "dashboard", affix: true },
-      },
-    ],
   },
 ];
 

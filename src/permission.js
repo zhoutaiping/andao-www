@@ -32,7 +32,6 @@ router.beforeEach(async (to, from, next) => {
         ]);
         router.addRoutes(accessRoutes);
         next();
-        next();
       } else {
         try {
           // get user info
