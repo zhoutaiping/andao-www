@@ -63,18 +63,6 @@ export default {
         window.location.replace(defaultSettings.signIn, '_self');
       }
     },
-    async logout() {
-      await this.$store.dispatch('user/logout');
-      const redirect_url =
-        process.env.NODE_ENV !== 'development'
-          ? this.console[TYPE]
-          : 'http://localhost:9500/news';
-      if (defaultSettings.signOutUrl)
-        window.open(
-          defaultSettings.signOutUrl + '?redirect_url=' + redirect_url,
-          '_self'
-        );
-    },
 
     handleConsole(TYPE) {
       if (!localStorage.getItem('token')) return;

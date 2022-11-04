@@ -7,6 +7,7 @@ import routes from "./router";
 import Element from "element-ui";
 import Cookies from "js-cookie";
 import * as filters from "./filters"; // global filters
+import Bootstrap from "@/core/bootstrap";
 
 import "@/core/use";
 import "@/core/use-console";
@@ -40,5 +41,8 @@ new Vue({
   el: "#app",
   router: routes,
   store,
+  created() {
+    Bootstrap();
+  },
   render: (h) => h(App),
 });

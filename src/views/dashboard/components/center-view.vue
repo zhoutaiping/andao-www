@@ -97,10 +97,10 @@ import CenterAction from './center-action';
 import CenterSection from './center-section';
 import Foot from './foot';
 import defaultSettings from '@public/settings';
-import {removeToken} from '@/utils/auth';
+import { removeToken } from '@/utils/auth';
 
 export default {
-  components: {CenterAction, CenterSection, Foot},
+  components: { CenterAction, CenterSection, Foot },
   data() {
     return {
       title: '护航在线业务高速增长',

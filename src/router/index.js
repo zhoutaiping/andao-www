@@ -73,6 +73,10 @@ export const constantRoutes = [
     redirect: "/news",
     hidden: true,
   },
+  {
+    path: "*",
+    redirect: "/",
+  },
 ];
 
 /**

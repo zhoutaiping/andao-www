@@ -40,11 +40,8 @@ import { mapGetters } from 'vuex';
 import Breadcrumb from '@/components/Breadcrumb';
 import Hamburger from '@/components/Hamburger';
 import Screenfull from '@/components/Screenfull';
-import th from '@/assets/images/th.png';
 import th_default from '@/assets/images/th.jpg';
-import th_zhangpan from '@/assets/images/th_zhangpan.jpg';
-import th_zhaojinlei from '@/assets/images/zhaojinlei.png';
-import defaultSettings from '@/settings';
+import defaultSettings from '@public/settings';
 export default {
   components: {
     Breadcrumb,
@@ -60,13 +57,7 @@ export default {
     ...mapGetters(['sidebar', 'avatar', 'name', 'device']),
 
     account_th() {
-      const th_url = {
-        zhoutaiping: th,
-        zhangpan: th_zhangpan,
-        lixuan: th_default,
-        zhaojinlei: th_zhaojinlei
-      };
-      return this.avatar || th_url['zhoutaiping'] || th_default;
+      return this.avatar || th_default;
     }
   },
   methods: {
