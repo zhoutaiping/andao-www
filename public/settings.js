@@ -1,5 +1,5 @@
 module.exports = {
-  title: "ANDAO",
+  title: "News",
 
   /**
    * @type {boolean} true | false
