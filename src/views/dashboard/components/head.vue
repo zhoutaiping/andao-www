@@ -7,7 +7,7 @@
         <!-- <router-link to="/home"></router-link> -->
       </div>
       <div class="box-r">
-        <div class="login-btn" @click="handleLogin('USER')">
+        <div :class="{ 'login-btn':isPC, 'login-btn-mobile' : !isPC }" @click="handleLogin('USER')">
           <i class="el-icon-user-solid" /> Login
         </div>
       </div>
@@ -37,7 +37,8 @@ export default {
       console: {
         USER: 'https://console.axisnow.xyz/',
         CONSOLE: 'http://admin.axisnow.xyz'
-      }
+      },
+      isPC: false
     };
   },
   computed: {
@@ -54,6 +55,8 @@ export default {
     if (!!token) {
       this.$store.dispatch('user/verifyToken', token);
     }
+    window.addEventListener('resize', this.handleResize)
+    this.isMobile()
   },
   methods: {
     handleLogin(TYPE) {
@@ -70,9 +73,29 @@ export default {
         this.console[TYPE] + '?token=' + localStorage.getItem('token'),
         '_self'
       );
+    },
+    isMobile() {
+      if(isMobile()){
+        this.isPC = false
+      }else{
+        this.isPC = true
+      }
+    },
+    handleResize() {
+      this.$nextTick(() =>{
+        this.isMobile()
+      })
     }
   }
 };
+
+function isMobile(){
+  if(window.navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
+    return true; // 移动端
+  }else{
+    return false; // PC端
+  }
+}
 </script>
 <style lang="scss" scoped>
 .header-box {
@@ -112,7 +135,21 @@ export default {
   text-align: center;
   cursor: pointer;
   border: 1px solid rgba(229, 235, 255, 0.508);
-  margin: 10px 0;
+  margin: 10px 1rem 0;
+  display: inline-block;
+}
+.login-btn-mobile {
+  width: 85px;
+  height: 40px;
+  font-size: 1.1rem;
+  line-height: 35px;
+  border-radius: 35px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid rgba(229, 235, 255, 0.508);
+  margin: 10px 1rem 0;
   display: inline-block;
 }
 .login-btn:hover {
