@@ -4,17 +4,17 @@
   <div :style="{
     'min-width': isPC ? '1440px' :'100vw'
   }">
-    <Head />
-    <CenterView />
+    <!-- <Head />
+    <CenterView /> -->
   </div>
 </template>
 
 <script>
-import Head from './components/head';
-import CenterView from './components/center-view';
+// import Head from './components/head';
+// import CenterView from './components/center-view';
 export default {
   name: 'HomePage',
-  components: { Head, CenterView },
+  // components: { Head, CenterView },
   data() {
     return {
       isPC: true

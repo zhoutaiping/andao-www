@@ -36,29 +36,8 @@ import Layout from "@/layout";
  */
 export const constantRoutes = [
   {
-    path: "/redirect",
-    component: Layout,
-    hidden: true,
-    children: [
-      {
-        path: "/redirect/:path(.*)",
-        component: () => import("@/views/redirect/index"),
-      },
-    ],
-  },
-  {
     path: "/news",
     component: () => import("@/views/dashboard/home"),
-    hidden: true,
-  },
-  {
-    path: "/login",
-    component: () => import("@/views/login/index"),
-    hidden: true,
-  },
-  {
-    path: "/auth-redirect",
-    component: () => import("@/views/login/auth-redirect"),
     hidden: true,
   },
   {
